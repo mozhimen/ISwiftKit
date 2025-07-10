@@ -1,13 +1,12 @@
 //
 //  UtilServiceRetry.swift
-//  INetKit
+//  ISwiftKit.Service
 //
-//  Created by Taiyou on 2025/6/27.
+//  Created by Taiyou on 2025/7/10.
 //
-
 import Foundation
 
-public extension ServiceKRetry{
+public extension ServiceRetry{
     enum Strategy :Sendable{
         /// Constant delay between retries
         case constant(

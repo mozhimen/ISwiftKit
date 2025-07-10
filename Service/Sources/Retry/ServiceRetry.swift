@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import SUtilKit
+import SUtilKit_SwiftUI
 
-public struct ServiceKRetry: Sequence, Sendable {
+public struct ServiceRetry: Sequence, Sendable {
     /// Default service
-    static let `default` = ServiceKRetry(strategy: .exponential())
+    static let `default` = ServiceRetry(strategy: .exponential())
     
     public let strategy: Strategy
     
@@ -46,7 +46,7 @@ public struct ServiceKRetry: Sequence, Sendable {
         }
         
         ///- Parameter service: Retry service ``ServiceRetry``
-        init(service:ServiceKRetry) {
+        init(service:ServiceRetry) {
             self.strategy = service.strategy
             self.deadline = .now() + strategy.timeout.toDispatchTimeInterval()
         }

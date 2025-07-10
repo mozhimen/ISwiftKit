@@ -4,24 +4,24 @@
 import PackageDescription
 
 let package = Package(
-    name: "ISwiftKit",
+    name: "ISwiftKit.Service",
     platforms: [
         .macOS(.v12),.iOS(.v13)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "ISwiftKit",
-            targets: ["ISwiftKit"]),
+            name: "ISwiftKit.Service",
+            targets: ["ISwiftKit.Service"]),
     ],
     dependencies: [
-        .package(name: "SUtilKit", path: "../SUtilKit")
+        .package(name: "SUtilKit.SwiftUI", path: "../../SUtilKit/SwiftUI")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "ISwiftKit",dependencies: ["SUtilKit"]),
+            name: "ISwiftKit.Service",dependencies: ["SUtilKit.SwiftUI"]),
 
     ]
 )
